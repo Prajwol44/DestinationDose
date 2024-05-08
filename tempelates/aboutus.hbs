@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Be Vietnam Pro", sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root
+{
+    --bgOrange: #e84949;
+}
+
+#wrapper
+{
+    height: 100vh; /*100view port (full page)*/
+    overflow-y: auto;  /*to scroll in y direction*/
+    overflow-x: hidden; /*to not scroll in x direction*/
+}
+
+.container
+{
+    margin: 0 auto; /*keep in center*/
+    height: 500px;
+    background-image: url(images/aboutus-main.jpeg);
+    background-size: cover;
+}
+
+.navbar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+
+.logo-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+}
+.logo-text a
+{
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 800;
+    padding-left: 2em;
+    text-decoration: none;
+}
+
+.search-bar
+{
+    padding-left: 18rem;
+    color: white;
+}
+
+.search-bar-form
+{
+    width: 100%;
+    max-width: 700px;
+    background: rgb(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 5px 10px;
+    backdrop-filter: blur(4px) saturate(180%);
+}
+
+.search-bar-form input
+{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 12px 10px;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+::placeholder
+{
+    color: #ffffff;
+}
+
+.search-bar-form button img
+{
+    width: 18px;
+}
+
+.search-bar-form button
+{
+    border: 0;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background: #ac0303;
+    cursor: pointer;
+}
+
+.nav-items
+{
+    display: flex;
+    gap: 2rem;
+    padding: 0 4em;
+}
+
+.nav-items div
+{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 1200;
+    cursor: pointer;
+}
+
+.nav-items div a
+{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+#nav-items-tag
+{
+    padding-top: 0.65rem;
+}
+
+.nav-items div :hover
+{
+    transition: 0.5s;
+    color: rgb(144, 144, 144); 
+    
+}
+
+.btn-white {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: 1200;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 20px;
+    z-index: 1;
+  }
+
+  .btn-white:hover {
+    background-color: #ac0303;
+    color: white;
+  }
+
+  .main-body
+  {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    margin-left: 50vh;
+  }
+
+  .main-body h1
+  {
+     font-family: "Fjalla One", sans-serif;
+    font-weight: 10000;
+    font-size: 60px;
+    padding-bottom: 35px;
+  }
+
+  .main-body-cover
+  {
+    background-color: rgb(245, 245, 245);
+  }
+
+  .title
+  {
+    font-size: 45px;
+    padding-bottom: 20px;
+  }
+
+  .aboutusdet p h3 h2
+  {
+    font-family: "DM Serif Text", serif;
+    font-size: 16px;
+    font-weight: 500;
+    
+  }
+
+  /* Footer of the website */
+
+  footer
+  {
+    background-color: #111;
+  }
+
+  .footer-container
+  {
+    width: 100%;
+    padding: 70px 30px 20px;
+  }
+
+  .social-icons
+  {
+    display: flex;
+    justify-content: center;
+     
+  }
+
+  .social-icons a
+  {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+  }
+
+  .social-icons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+  }
+
+  .social-icons a:hover{
+   background-color: #111;
+   transition: 0.8s;
+ }
+
+ .social-icons a:hover i{
+   color: white;
+   transition: 0.8s;
+ }
+
+  .footer-nav{
+    margin: 30px 0;
+  }
+
+  .footer-nav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+  }
+
+  .footer-nav ul li a{
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+  }
+
+  .footer-nav ul li a:hover
+  {
+    opacity: 1;
+  }
+
+  .footer-bottom
+  {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer-bottom p
+  {
+    color: white;
+  }
+
+  .designer
+  {
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+  }
+
+  
+  /* Media queries */
+
+  @media(max-width: 700px) {
+    .footer-nav ul{
+      flex-direction: column;
+    }
+
+    .footer-nav ul li{
+      width: 100%;
+      text-align: center;
+      margin: 10px;
+    }
+  }
+
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+
+    <div class="container">
+
+    <div class="navbar">
+        <div class="logo-container">
+            <div class="logo-text">
+                <a href="/">Destination Dose</a>
+            </div>
+
+            <div class="search-bar">
+                <form action="#none" class="search-bar-form">
+                    <input type="text" id = "insearch" placeholder="I am looking for.." name = "q">
+                            <div class = "sub" id="button"><img src="images/search.png" alt=""></div>
+                </form>
+            </div>
+        </div>
+
+        <div class="nav-items">
+                    <div id="nav-items-tag"><a href="#destinations">Welcome {{naming}}</a></div>
+                    <div class="btn-white" id = "btn">Sign-In</div>
+                    
+                </div>
+        
+        </div>
+
+        </div>
+<div class="main-body-cover">
+        <div class="main-body">
+
+          <h1>About Us: </h1>
+              <p class="aboutusdet">Welcome to Destination Dose, your ultimate companion in the world of travel! We are thrilled to take you on an adventure that transcends boundaries, offering unparalleled experiences and unforgettable memories. At Destination Dose, we believe that travel isn't just about visiting places; it's about immersing yourself in cultures, embracing diversity, and creating stories that last a lifetime. <br><br>
+
+<h3>Our Mission</h3> <br><br>
+
+Destination Dose was born out of a passion for exploration and a desire to connect travelers with the world's most captivating destinations. Our mission is simple: to inspire, inform, and empower travelers to embark on journeys that enrich their lives and broaden their perspectives. Whether you're a seasoned globetrotter or a first-time traveler, we're here to guide you every step of the way, ensuring that your travel experiences are nothing short of extraordinary. <br> <br>
+
+<h3>What Sets Us Apart</h3> <br> <br>
+
+What sets Destination Dose apart is our unwavering commitment to quality, authenticity, and personalization. We understand that every traveler is unique, with distinct preferences, interests, and aspirations. That's why we go above and beyond to curate tailored travel experiences that cater to your individual needs. Whether you're seeking adrenaline-pumping adventures, cultural immersion, culinary delights, or tranquil escapes, we have something for everyone. <br> <br>
+
+<h3>Our Team</h3> <br> <br>
+
+At the heart of Destination Dose is a team of passionate travelers, storytellers, and experts who share a common goal: to redefine the way you experience the world. Our team members hail from diverse backgrounds and possess extensive knowledge of global destinations, ensuring that you receive expert guidance and insider tips every step of the way. From crafting bespoke itineraries to providing round-the-clock support, our dedicated team is here to make your travel dreams a reality. <br> <br>
+
+<h3>What We Offer</h3> <br> <br>
+
+At Destination Dose, we offer a comprehensive range of services designed to cater to all your travel needs. <br> <br>
+
+Ready to embark on your next adventure? Whether you're planning a solo backpacking trip, a romantic getaway, or a family vacation, Destination Dose is here to make your travel dreams a reality. Explore our website, reach out to our team, and let the journey begin. With Destination Dose as your guide, the world is yours to discover.</p>
+
+
+ </div>
+ </div>
+
+
+        <footer>
+            <div class="footer-container">
+                <div class="social-icons">
+                   <a href=""><i class="fa-brands fa-facebook"></i></a>
+                   <a href=""><i class="fa-brands fa-instagram"></i></a>
+                   <a href=""><i class="fa-brands fa-twitter"></i></a>
+                   <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                   <a href=""><i class="fa-brands fa-youtube"></i></a> 
+                </div>
+    
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/aboutus">About</a></li>
+                        <li><a href="/contactus">Contact Us</a></li>
+                    </ul>
+                </div>   
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2024; Designed by <span class="designer">Team-NEXA (3)</span></p>
+            </div>
+        </footer>
+
+        </div>
+
+<script>
+
+    document.getElementById("btn").onclick = function() 
+              
+          
+            {
+                window.location.href = "/login";
+                      
+            }
+    document.getElementById("button").onclick = function() 
+      
+  
+             {
+                  window.location.href = "/search";
+              
+             }
+
+document.getElementById("insearch").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent the default form submission behavior
+        window.location.href = "/search";
+    }
+});
+</script> 
+    
+</body>
+</html>

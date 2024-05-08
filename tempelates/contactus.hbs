@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Be Vietnam Pro", sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root
+{
+    --bgOrange: #e84949;
+}
+
+#wrapper
+{
+    height: 100vh; /*100view port (full page)*/
+    overflow-y: auto;  /*to scroll in y direction*/
+    overflow-x: hidden; /*to not scroll in x direction*/
+}
+
+.container
+{
+    margin: 0 auto; /*keep in center*/
+    height: 500px;
+    background-image: url(images/contactus-main.jpeg);
+    background-size: cover;
+}
+
+.navbar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+
+.logo-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+}
+.logo-text a
+{
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 800;
+    padding-left: 2em;
+    text-decoration: none;
+}
+
+
+
+.search-bar
+{
+    padding-left: 18rem;
+    color: white;
+}
+
+.search-bar-form
+{
+    width: 100%;
+    max-width: 700px;
+    background: rgb(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 5px 10px;
+    backdrop-filter: blur(4px) saturate(180%);
+}
+
+.search-bar-form input
+{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 12px 10px;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+::placeholder
+{
+    color: #ffffff;
+}
+
+.search-bar-form button img
+{
+    width: 18px;
+}
+
+.search-bar-form button
+{
+    border: 0;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background: #a14f07;
+    cursor: pointer;
+}
+
+.nav-items
+{
+    display: flex;
+    gap: 2rem;
+    padding: 0 4em;
+}
+
+.nav-items div
+{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 1200;
+    cursor: pointer;
+}
+
+.nav-items div a
+{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+#nav-items-tag
+{
+    padding-top: 0.65rem;
+}
+
+.nav-items div :hover
+{
+    transition: 0.5s;
+    color: rgb(144, 144, 144); 
+    
+}
+
+.btn-white {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: 1200;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 20px;
+    z-index: 1;
+  }
+
+  .btn-white:hover {
+    background-color: #a14f07;
+    color: white;
+  }
+
+  /*Main Section*/
+
+  .contact
+  {
+    position: relative;
+    min-height: 100vh;
+    padding: 60px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .content
+  {
+    padding-left: 2.5em;
+  }
+
+  .content h1
+  {
+    font-size: 44px;
+    font-weight: 2000;
+    font-family: "Prata", serif;
+  }
+
+  .content p
+  {
+    font-weight: 500;
+    font-family: "Prata", serif;
+    
+  }
+
+  .main-container
+  {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+  }
+
+  .contactInfo
+  {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box
+  {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+  }
+
+  .icon
+  {
+    min-width: 60px;
+    height: 60px;
+    background: #e27618;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+  }
+
+  .text
+  {
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #111;
+    flex-direction: column;
+    font-weight: 600;
+  }
+
+  .text h3
+  {
+    font-weight: 1000;
+    color: #e27618;
+    font-family: "Prata", serif;
+  }
+
+  .contactForm
+  {
+    width: 40%;
+    padding: 40px;
+    background: #bd691f;
+  }
+
+  .contactForm h2
+  {
+    font-size: 30px;
+    color: #fffdfd;
+    font-weight: 1000;
+  }
+
+  .inputBox
+  {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+.inputBox input,
+.inputBox textarea
+{
+    background-color: #d37625;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    resize: none;
+    
+    border-bottom: 2px solid #333;
+  }
+
+  .inputBox span
+  {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #fffbfb;
+  }
+
+  .inputBox input:focus ~ span,
+  .inputBox input:valid ~ span,
+  .inputBox textarea:focus ~ span,
+  .inputBox textarea:valid ~ span
+  {
+    color: #e3a697;
+    font-size: 12px;
+    transform: translateY(-20px);
+  }
+
+  .inputBox input[type="submit"]
+  {
+    width: 100px;
+    background: #ffffff;
+    color: #111;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  /* Footer of the website */
+
+  footer
+  {
+    background-color: #111;
+  }
+
+  .footer-container
+  {
+    width: 100%;
+    padding: 70px 30px 20px;
+  }
+
+  .social-icons
+  {
+    display: flex;
+    justify-content: center;
+     
+  }
+
+  .social-icons a
+  {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+  }
+
+  .social-icons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+  }
+
+  .social-icons a:hover{
+   background-color: #111;
+   transition: 0.8s;
+ }
+
+ .social-icons a:hover i{
+   color: white;
+   transition: 0.8s;
+ }
+
+  .footer-nav{
+    margin: 30px 0;
+  }
+
+  .footer-nav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+  }
+
+  .footer-nav ul li a{
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+  }
+
+  .footer-nav ul li a:hover
+  {
+    opacity: 1;
+  }
+
+  .footer-bottom
+  {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer-bottom p
+  {
+    color: white;
+  }
+
+  .designer
+  {
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+  }
+
+  
+  /* Media queries */
+
+  @media(max-width: 700px) {
+    .footer-nav ul{
+      flex-direction: column;
+    }
+
+    .footer-nav ul li{
+      width: 100%;
+      text-align: center;
+      margin: 10px;
+    }
+  }
+
+  @media(max-width: 900px)
+  {
+    .contact
+    {
+        padding: 50px;
+    }
+
+    .main-container
+    {
+        flex-direction: column;
+    }
+
+     .contactInfo
+    {
+        margin-bottom: 40px;
+    }
+
+     .contactInfo, .contactForm
+    {
+        width: 100%;
+    }
+  }
+
+  
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+
+    <div class="container">
+
+    <div class="navbar">
+        <div class="logo-container">
+            <div class="logo-text">
+                <a href="/">Destination Dose</a>
+            </div>
+
+            <div class="search-bar">
+                <form action="#none" class="search-bar-form">
+                    <input type="text" id = "insearch" placeholder="I am looking for.." name = "q">
+                     <div class = "sub" id="button"><img src="images/search.png" alt=""></div>
+                </form>
+            </div>
+        </div>
+
+        <div class="nav-items">
+                    <div id="nav-items-tag"><a href="#destinations">Welcome {{naming}}</a></div>
+                    <div class="btn-white" id = "btn">Sign-In</div>
+                    
+                </div>
+        </div>
+        </div>
+
+        <div class="contact">
+            <div class="content">
+                <h1>Contact Us:</h1>
+                <p>We at Destination Dose are always ready to help you. Present your thoughts, feebacks, reviews or any
+                  oher complaints through the feedback form provided to you. Your feedback will be highly appreciated 
+                  and we will work on those to make the website better for furure use.
+                </p>
+            </div>
+            <div class="main-container">
+                <div class="contactInfo">
+                    <div class="box">
+                        <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                            <div class="text">
+                                <h3>Address:</h3>
+                                <p>Patiala, Punjab,<br>Thapar University, <br> Bhadson Road, <br>147004</p>
+                            </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                            <div class="text">
+                                <h3>Phone:</h3>
+                                <p>+91 8373978564</p>
+                            </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                            <div class="text">
+                                <h3>Email:</h3>
+                                <p>destinationdosecreators@gmail.com</p>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="contactForm">
+                    <form action="/contactus" method="post">
+                        <h2>Send Message</h2>
+                        <div class="inputBox">
+                            <input type="text" name="first" >
+                            <span>First Name</span>
+                        </div>
+
+                        <div class="inputBox">
+                            <input type="text" name="last" >
+                            <span>Last Name
+                            </span>
+                        </div>
+
+                        <div class="inputBox">
+                            <input type="text" name="email" >
+                            <span>Email</span>
+                        </div>
+
+                        <div class="inputBox">
+                            <textarea name="feedback"></textarea>
+                            <span>Write Your Feedback...</span>
+                        </div>
+
+                        <div class="inputBox">
+                            <input class="sub" type="submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <footer>
+            <div class="footer-container">
+                <div class="social-icons">
+                   <a href=""><i class="fa-brands fa-facebook"></i></a>
+                   <a href=""><i class="fa-brands fa-instagram"></i></a>
+                   <a href=""><i class="fa-brands fa-twitter"></i></a>
+                   <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                   <a href=""><i class="fa-brands fa-youtube"></i></a> 
+                </div>
+    
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/aboutus">About</a></li>
+                        <li><a href="/contactus">Contact Us</a></li>
+                    </ul>
+                </div>   
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2024; Designed by <span class="designer">Team-NEXA (3)</span></p>
+            </div>
+        </footer>
+
+        </div>
+
+<script>
+
+    document.getElementById("btn").onclick = function() 
+              
+          
+            {
+                window.location.href = "/login";
+                      
+            }
+    document.getElementById("button").onclick = function() 
+      
+  
+             {
+                  window.location.href = "/search";
+              
+             }
+
+document.getElementById("insearch").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent the default form submission behavior
+        window.location.href = "/search";
+    }
+});
+</script> 
+    
+</body>
+</html>

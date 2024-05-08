@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup to Destination Dose</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins",sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(/images/item5.jpg);
+    background-size: cover;
+}
+
+.wrapper{
+    width: 420px;
+    background: transparent;
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.wrapper h1{
+    font-size: 36px;
+    text-align: center;
+}
+
+.wrapper h5{
+    text-align: center;
+  color: black;
+}
+
+.wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    border-color: #333;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255,255,255,.2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder{
+    
+    color: #fff;
+}
+
+.input-box i{
+position: absolute;
+right: 20px;
+top: 50%;
+transform: translateY(-50%);
+font-size: 20px;
+
+}
+
+.wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.wrapper .login-link{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.login-link p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link p a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">
+        <form action="/signup" method = "post">
+            <h1>Sign Up</h1>
+            <h5>Create your account</h5>
+            <div class="input-box">
+                
+                
+                <input type="text" placeholder="Name" name="name">
+                <i class="fa fa-user"></i>
+            </div>
+            
+            <div class="input-box">
+               
+                <input type="text" placeholder="Email-id" name="id">
+                <i class="fa fa-user">
+                </i>
+            </div>
+
+            <div class="input-box">
+               
+                <input type="password" placeholder="Password" name="password">
+                <i class="fa fa-key">
+                </i>
+            </div>
+
+
+           <button type="submit" class="btn">Submit</button>
+
+           
+           <div class="login-link" id="log">
+            <p>Already have an account?<a href="/login">Login</a></p>
+           </div>
+
+        </form>
+
+    </div>
+
+    <script>
+        document.getElementById("log").onclick = function() 
+                   {
+                        window.location.href = "/home";
+                    
+                   }
+            </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

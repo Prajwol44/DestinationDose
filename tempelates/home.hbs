@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Dose</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap'); /*Hero section Text*/
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap"); /*Font inside main card*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');  /*Heading Texts*/
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap'); /*Choose us Card Heading*/
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* Generic Chize */
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Be Vietnam Pro", sans-serif;
+    scroll-behavior: smooth;
+}
+
+#wrapper{
+    height: 100vh; /*100view port (full page)*/
+    overflow-y: auto;  /*to scroll in y direction*/
+    overflow-x: hidden; /*to not scroll in x direction*/
+}
+
+/* Hero Section - Start */
+
+.container{
+    margin: 0 auto; /*keep in center*/
+    height: 800px;
+    background-image: url(images/patiala.jpeg);
+    background-size: cover;
+    width: 100%;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.logo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+}
+
+.logo-text a{
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 800;
+    padding-left: 2em;
+    text-decoration: none;
+}
+
+.search-bar{
+    padding-left: 18rem;
+    color: white;
+}
+
+.search-bar-form{
+    width: 100%;
+    max-width: 700px;
+    background: rgb(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 5px 10px;
+    backdrop-filter: blur(4px) saturate(180%);
+}
+
+.search-bar-form input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 12px 10px;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+::placeholder{
+    color: #ffffff;
+}
+
+.sub img{
+    width: 26px;
+    padding-top: 0.3em;
+    padding-left: 0.45em;
+    
+}
+
+.search-bar-form div{
+    border: 0;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background: #29432a;
+    cursor: pointer;
+}
+
+.sub img
+{
+
+}
+  
+
+.nav-items{
+    display: flex;
+    gap: 2rem;
+    padding: 0 4em;
+}
+
+.nav-items div{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 1200;
+    cursor: pointer;
+}
+
+.nav-items div a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+#nav-items-tag{
+    padding-top: 0.65rem;
+}
+
+.nav-items div :hover{
+    transition: 0.5s;
+    color: rgb(144, 144, 144); 
+}
+
+.btn-white {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: 1200;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 20px;
+    z-index: 1;
+  }
+
+  .btn-white:hover {
+    background-color: #29432a;
+    color: white;
+  }
+
+.hero-section{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+  .hero-section-heading{
+    font-family: "Oswald", sans-serif;
+    width: 80%;
+    position: relative;
+    padding-top: 2em;
+    font-weight: 800;
+    color: rgb(255, 254, 254);
+    font-size: 80px;
+  }
+
+  /* Main Section of The Website */
+
+  .main-section{
+    margin-bottom: 5em;
+  }
+
+  .choose-card-heading{
+    display: flex;
+    padding-top: 50px;
+    padding-left: 5rem;
+  }
+
+  .choose-card-heading h1{
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 10000;
+    font-size: 60px;
+  }
+
+  .card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+ .card-container :hover{
+    transform: scale(1.05);
+    transition: 0.4s;
+ }
+
+ .card :hover{
+    transform: scale(1);
+ }
+
+  .card{
+    width: 400px;
+    background-color: #f3f8ff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    margin: 20px;
+  }
+
+  .card img{
+    width: 100%;
+    height: auto;
+  }
+
+  .card-content{
+    padding: 16px;
+  }
+
+  .card-content h2{
+    font-family: "Fjalla One", sans-serif;
+    font-size: 34px;
+    margin-bottom: 8px;
+    color: rgb(71, 71, 71);
+  }
+
+  .card-content p{
+    font-family: "STIX Two Text", serif;
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 410;
+    color: rgb(71, 71, 71);
+  }
+
+  .card-content .card-btn{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #28a4fd;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 16px;
+    color: #ffffff;
+  }
+
+  .card-btn:hover{
+    background-color: #d1e2f6;
+    color: #28a4fd;
+    transition: 0.5s;
+  }
+
+  /* Choose Us Card Containers */
+
+  .choose-us-main{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .choose-us-card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 75px;
+  }
+
+  .choose-us-card{
+    width: 300px;
+    height: 600px;
+    background-color: #f0f0f0;
+    margin: 20px;
+    border-radius: 0.8rem;
+  }
+
+  .choose-us-heading{
+    display: flex;
+    padding-left: 4rem;
+  }
+
+  .choose-us-heading h1{
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 10000;
+    font-size: 60px;
+  }
+
+  .card-icon{
+    text-decoration: none;
+    margin-top: 60px;
+    margin-bottom: 35px;
+    font-size: 3em;
+    color: rgb(71, 71, 71);
+    opacity: 0.9;
+    text-align: center;
+  }
+
+  .choose-card-content{
+    padding: 16px;
+  }
+
+  .choose-card-content h2{
+    font-family: "Fjalla One", sans-serif;
+    font-size: 30px;
+    padding-bottom: 50px;
+    font-weight: 800;
+    text-align: center;
+    color: rgb(71, 71, 71);
+  }
+
+  .choose-card-content p
+  {
+    font-family: "STIX Two Text", serif;
+    font-size: 19px;
+    line-height: 1.5;
+    font-weight: 410;
+    color: rgb(71, 71, 71);
+  }
+
+  #choose-1{
+    background-color: #feffd9;
+  }
+
+  #choose-2{
+    background-color: #eeffff;
+  }
+
+  #choose-3{
+    background-color: #ffefef;
+  }
+
+  #choose-4{
+    background-color: #f7ebff;
+  }
+
+
+
+  /* Footer of the website */
+
+  footer{
+    background-color: #111;
+  }
+
+  .footer-container{
+    width: 100%;
+    padding: 70px 30px 20px;
+  }
+
+  .social-icons{
+    display: flex;
+    justify-content: center;
+     
+  }
+
+  .social-icons a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+  }
+
+  .social-icons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+  }
+
+  .social-icons a:hover{
+    background-color: #111;
+    transition: 0.8s;
+  }
+
+  .social-icons a:hover i{
+    color: white;
+    transition: 0.8s;
+  }
+
+  .footer-nav{
+    margin: 30px 0;
+  }
+
+  .footer-nav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+  }
+
+  .footer-nav ul li a{
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+  }
+
+  .footer-nav ul li a:hover{
+    opacity: 1;
+  }
+
+  .footer-bottom{
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer-bottom p{
+    color: white;
+  }
+
+  .designer{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+  }
+
+  /* Media queries */
+
+  @media(max-width: 700px) {
+    .footer-nav ul{
+      flex-direction: column;
+    }
+
+    .footer-nav ul li{
+      width: 100%;
+      text-align: center;
+      margin: 10px;
+    }    
+  }
+
+  
+
+
+
+    </style>
+
+
+
+</head>
+<body>
+    <div id="wrapper">
+        <div class="container">
+
+            <div class="navbar">
+                <div class="logo-container">
+                    <div class="logo-text">
+                        <a href="/">Destination Dose</a>
+                    </div>
+
+                    <div class="search-bar">
+                        <form action="#none" class="search-bar-form">
+                            <input type="text" id = "insearch" placeholder="I am looking for.." name = "q">
+                            <div class = "sub" id="button"><img src="images/search.png" alt=""></div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="nav-items">
+                    <div id="nav-items-tag"><a href="#destinations">Welcome {{naming}}</a></div>
+                    <div class="btn-white" id = "btn">Sign-In</div>
+                    
+                </div>
+                
+                </div>
+
+                <div class="hero-section">
+                  
+                    <div class="hero-section-heading">
+                         Experience Travel Like Never Before
+                    </div>
+                </div>
+
+            </div>
+
+                <div class="main-section">
+                    <div class="choose-card-heading">
+                        <h1>What do you feel like doing today?</h1>
+                    </div>
+
+                    <div class="card-container">
+
+                        <div class="card">
+                            <img src="images/sightseeing.jpeg">
+                            <div class="card-content">
+                               <h2>Sightseeing</h2>
+                               <p>Patiala being the picturous city that it is, has tons of beautiful and mesmarizing views to witness. 
+                                Enjoy the amazing places that this city has to offer.
+                               </p>
+                                 <a href="/sightseeing" class="card-btn">Start Planning</a>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img src="images/eating-out.jpeg">
+                            <div class="card-content">
+                               <h2>Eating Out</h2>
+                               <p>A list of resturants and cafes for you to hang out, have good fun and lighten the mood as you travel 
+                                through the city.</p>
+                                 <a href="/eatingout" class="card-btn">Start Planning</a>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img src="images/activities.jpeg">
+                            <div class="card-content">
+                               <h2>Activities</h2>
+                               <p>Add some exitiment to your trip and explore the fun side of Patiala with various activities this city has to offer.</p>
+                                 <a href="/activities" class="card-btn">Start Planning</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="choose-us-main">
+                    <div class="choose-us-heading">
+                        <h1>Reasons to choose us as your ultimate city guide:</h1>
+                    </div>
+
+                    <div class="choose-us-card-container">
+                        <div class="choose-us-card" id="choose-1">
+                            <div class="card-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="choose-card-content">
+                                <h2>Overview of the whole city</h2>
+                                <p>Destination Dose provides comprehensive overview of Patiala to all of it's users. 
+                                  It is a handy tool for everyone visiting the city.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="choose-us-card" id="choose-2">
+                            <div class="card-icon">
+                                <i class="fa-solid fa-compass"></i>
+                            </div>
+                            <div class="choose-card-content">
+                                <h2>Every detail in the grip of your hands.</h2>
+                                <p>We aim to provide details about places to eat, activities, and places to visit around the city.
+                                  Users can refer to the website for such detais.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="choose-us-card" id="choose-3">
+                            <div class="card-icon">
+                                <i class="fa-solid fa-mountain-sun"></i>
+                            </div>
+                            <div class="choose-card-content">
+                                <h2>Truested to all users Worldwide</h2>
+                                <p>Our website, even though neew to the market, is loved and truested by costumers that have used 
+                                  the website.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="choose-us-card" id="choose-4">
+                            <div class="card-icon">
+                                <i class="fa-solid fa-plane-departure"></i>
+                            </div>
+                            <div class="choose-card-content">
+                                <h2>Created by Team Nexa, so it's a Win</h2>
+                                <p>We aim in expaninding the website to cover more touristy cities like Chandigadh, Delhi, Manali,
+                                  Ladakh, etc to provide users with more features and details about places all over India.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="social-icons">
+                   <a href=""><i class="fa-brands fa-facebook"></i></a>
+                   <a href=""><i class="fa-brands fa-instagram"></i></a>
+                   <a href=""><i class="fa-brands fa-twitter"></i></a>
+                   <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                   <a href=""><i class="fa-brands fa-youtube"></i></a> 
+                </div>
+    
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/aboutus">About</a></li>
+                        <li><a href="/contactus">Contact Us</a></li>
+                    </ul>
+                </div>   
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2024; Designed by <span class="designer">Team-NEXA (3)</span></p>
+            </div>
+        </footer>
+    
+            </div>
+   
+
+
+<script>
+
+    document.getElementById("btn").onclick = function() 
+      
+  
+             {
+                  window.location.href = "/login";
+              
+             }
+
+    document.getElementById("button").onclick = function() 
+      
+  
+             {
+                  window.location.href = "/search";
+              
+             }
+
+document.getElementById("insearch").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent the default form submission behavior
+        window.location.href = "/search";
+    }
+});
+  </script> 
+  </body>
+</html>

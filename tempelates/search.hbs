@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/e8fa2e31b4.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+            font-size: 18px;
+        }
+        body {
+            margin: 4vh;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .sidebar {
+            width: 25%;
+            border: 1px solid #eee;
+            border-radius: 3px;
+            padding: 15px;
+            height: 92vh;
+            box-shadow: 0px 0px 3px gray;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .fa-circle {
+            color: orangered;
+        }
+        .searchBar {
+            width: 100%;
+            background-color: #eee;
+            border-radius: 3px;
+            padding: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        input {
+            border: none;
+            outline: none;
+            background: none;
+        }
+        .glass:hover {
+            color: rgb(187, 69, 26);
+            cursor: pointer;
+        }
+        .social-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fa-brands {
+            font-size: 25px;
+            margin: 0 10px;
+            color: #8a8383;
+            cursor: pointer;
+        }
+        .fa-brands:hover {
+            color: orangered;
+        }
+        .data {
+            width: 73%;
+            border-radius: 3px;
+            height: 92vh;
+            overflow-y: auto;
+        }
+        .top {
+            height: 60px;
+            border-radius: 3px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+        }
+        .header {
+            height: 200px;
+            border-radius: 3px;
+            background-color: #333;
+            margin: 3vh 0px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header p {
+            font-size: 40px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+        #root {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+        .mainbox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #161616;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        .img-box {
+            width: 100%;
+            height: 176px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mainbox img{
+            height: 100%;
+            width: 100%;
+        }
+        .images {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: fill;
+            object-position: center;
+        }
+        .bottom {
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 110px;
+        }
+        h2 {
+            font-size: 20px;
+            color: orangered;
+        }
+        button {
+            width: 100%;
+            position: relative;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            padding: 7px 25px;
+            cursor: pointer;
+            color: white;
+        }
+        button:hover {
+            background-color: orangered;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidehead">
+                <div class="dots">
+                    <i class="fa-solid fa-circle"></i>
+                    <i class="fa-solid fa-circle" style="color: #333;"></i>
+                    <i class="fa-solid fa-circle"></i>
+                </div>
+                <hr style="margin: 15px 0; border: 1px solid #000000">
+            </div>
+            <div class="sidebody" style="height: 69vh;">
+                <div class="searchBar">
+                    <input placeholder="Search..." id="searchBar" name="searchBar" type="text">
+                    <i class="fa-solid fa-magnifying-glass glass" id="btn"></i>
+                </div>
+            </div>
+            <div class="sidefoot">
+                <hr style="margin: 15px 0; border: 1px solid #141414">
+                <div class="social-icons">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-square-github"></i>
+                </div>
+            </div>
+
+        </div>
+        <div class="data">
+            <div class="top">
+                <p>+91 3185700058</p>
+                <p>destinationdose@gmail.com</p>
+            </div>
+            <div class="header">
+                <p>SEARCH PLACES IN PATIALA</p>
+            </div>
+            <div class="body">
+                <div id="root"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const product = [
+            {
+                id: 0,
+                image: 'images/starbucks.png',
+                title: 'Starbucks Patiala',
+                
+            },
+            {
+                id: 1,
+                image: 'images/biryani-bk.png',
+                title: 'Biryani By Kilo',
+            },
+            {
+                id: 2,
+                image: 'images/barandari_garden.jpeg',
+                title: 'Barandari Garden',
+               
+            },
+            {
+                id: 3,
+                image: 'images/deer-park.jpeg',
+                title: 'Deer Park',
+               
+            },
+            {
+                id: 4,
+                image: 'images/gurudwara.jpeg',
+                title: 'Gurudwara Shri Dukhniwaran Sahib ',
+                
+            },
+            {
+                id: 5,
+                image: 'images/qila_mubarak.jpeg',
+                title: 'Qila Mubarak',
+                
+            },
+
+             {
+                id: 6,
+                image: 'images/moti_bagh_palace.jpeg',
+                title: 'Moti Bagh Palace',
+                
+            },
+
+             {
+                id: 7,
+                image: 'images/heritage-walk.jpeg',
+                title: 'Heritage Walk',
+                
+            },
+
+             {
+                id: 8,
+                image: 'images/brooklyn-central.png',
+                title: 'Brookly Central',
+                
+            },
+
+             {
+                id: 9,
+                image: 'images/door-no-3.png',
+                title: 'Door No 3',
+                
+            },
+
+             {
+                id: 10,
+                image: 'images/tim-hortons.png',
+                title: 'Tim Hortons',
+                
+            },
+
+             {
+                id: 11,
+                image: 'images/mocha.png',
+                title: 'Mocha Cafe and Bar',
+                
+            },
+
+             {
+                id: 12,
+                image: 'images/bowling.jpeg',
+                title: 'Land of Grill- Bowling',
+                
+            },
+
+             {
+                id: 13,
+                image: 'images/arcade.jpeg',
+                title: 'Tic Tacs - Arcade',
+                
+            },
+
+             {
+                id: 14,
+                image: 'images/pool.jpeg',
+                title: 'Snooker House',
+                
+            },
+
+             {
+                id: 15,
+                image: 'images/go-kart.jpeg',
+                title: 'Go Kart',
+                
+            },
+
+             {
+                id: 16,
+                image: 'images/movie.jpeg',
+                title: 'PVR Cinemas',
+                
+            },
+
+             {
+                id: 17,
+                image: 'images/omaxe.jpg',
+                title: 'Omaxe Mall',
+                
+            },
+
+             {
+                id: 18,
+                image: 'images/thapar.jpg',
+                title: 'Thapar University',
+                
+            },
+        ];
+
+        const categories = [...new Set(product.map((item) => { return item }))]
+
+        document.getElementById('searchBar').addEventListener('keyup', (e) => {
+            const searchData = e.target.value.toLowerCase();
+            const filteredData = categories.filter((item) => {
+                return (
+                    item.title.toLowerCase().includes(searchData)
+                )
+            })
+            displayItem(filteredData)
+        });
+
+        const displayItem = (items) => {
+            document.getElementById('root').innerHTML = items.map((item) => {
+                var { image, title, price } = item;
+                return (
+                    `
+                    <div class = "mainbox">
+                        <img class='images' src=${image}></img>
+                        <div class='bottom'>
+                            <p>${title}</p>
+                        <button>See Details</button>
+                        </div>
+                    </div>
+                    </div>`
+                )
+            }).join('')
+        };
+        displayItem(categories);
+
+    </script>
+</body>
+
+</html>

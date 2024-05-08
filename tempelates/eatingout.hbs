@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Dose - Eating Out</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Be Vietnam Pro", sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root
+{
+    --bgOrange: #e84949;
+}
+
+#wrapper
+{
+    height: 100vh; /*100view port (full page)*/
+    overflow-y: auto;  /*to scroll in y direction*/
+    overflow-x: hidden; /*to not scroll in x direction*/
+}
+
+.container
+{
+    margin: 0 auto; /*keep in center*/
+    height: 500px;
+    background-image: url(images/eating-out-main.jpeg);
+    background-size: cover;
+}
+
+.navbar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+
+.logo-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+}
+.logo-text a
+{
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 800;
+    padding-left: 2em;
+    text-decoration: none;
+}
+
+
+
+.search-bar
+{
+    padding-left: 18rem;
+    color: white;
+}
+
+.search-bar-form
+{
+    width: 100%;
+    max-width: 700px;
+    background: rgb(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 5px 10px;
+    backdrop-filter: blur(4px) saturate(180%);
+}
+
+.search-bar-form input
+{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 12px 10px;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+::placeholder
+{
+    color: #ffffff;
+}
+
+.search-bar-form button img
+{
+    width: 18px;
+}
+
+.search-bar-form button
+{
+    border: 0;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background: #1186a9;
+    cursor: pointer;
+}
+
+
+.nav-items
+{
+    display: flex;
+    gap: 2rem;
+    padding: 0 4em;
+}
+
+.nav-items div
+{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 1200;
+    cursor: pointer;
+}
+
+.nav-items div a
+{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+#nav-items-tag
+{
+    padding-top: 0.65rem;
+}
+
+.nav-items div :hover
+{
+    transition: 0.5s;
+    color: rgb(144, 144, 144); 
+    
+}
+
+.btn-white {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: 1200;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 20px;
+    z-index: 1;
+  }
+
+  .btn-white:hover {
+    background-color: #1186a9;
+    color: white;
+  }
+
+  /* Main Section of The Website */
+
+  .container-title{
+    background-color: rgb(231, 231, 231);
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    padding-top: 2rem;
+    padding-left: 8rem;
+  }
+
+  .container-title h2{
+    font-size: 40px;
+    font-weight: 800;
+    font-family: "Prata", serif;
+  }
+
+  .main-container{
+    background-color: rgb(231, 231, 231);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    perspective: 800px;
+  }
+
+  .card{
+    width: 350px;
+    height: 500px;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+  }
+
+  .card-container:hover > .card{
+    cursor: pointer;
+    transform: rotateY(180deg);
+  }
+
+  .front, .back {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+  }
+
+  .front img
+  {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 2rem;
+  }
+
+  .back
+  {
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(161,164,213,1) 33%, rgba(164,138,190,1) 48%, rgba(154,167,216,1) 79%, rgba(148,187,233,1) 100%);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    color: #2b1665;
+  }
+
+  .back h1
+  {
+    text-align: center;
+    padding: 5px;
+    font-weight: 3000;
+    font-size: 40px;
+    font-family: "Prata", serif;
+  }
+
+  .back p
+  {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: "DM Serif Text", serif;
+    font-size: 16px;
+  }
+
+
+   /* Footer of the website */
+
+   footer
+   {
+     background-color: #111;
+   }
+ 
+   .footer-container
+   {
+     width: 100%;
+     padding: 70px 30px 20px;
+   }
+ 
+   .social-icons
+   {
+     display: flex;
+     justify-content: center;
+      
+   }
+ 
+   .social-icons a
+   {
+     text-decoration: none;
+     padding: 10px;
+     background-color: white;
+     margin: 10px;
+     border-radius: 50%;
+   }
+ 
+   .social-icons a i{
+     font-size: 2em;
+     color: black;
+     opacity: 0.9;
+   }
+
+   .social-icons a:hover{
+    background-color: #111;
+    transition: 0.8s;
+  }
+
+  .social-icons a:hover i{
+    color: white;
+    transition: 0.8s;
+  }
+ 
+   .footer-nav{
+     margin: 30px 0;
+   }
+ 
+   .footer-nav ul{
+     display: flex;
+     justify-content: center;
+     list-style-type: none;
+   }
+ 
+   .footer-nav ul li a{
+     color: white;
+     margin: 20px;
+     text-decoration: none;
+     font-size: 1.3em;
+     opacity: 0.7;
+     transition: 0.5s;
+   }
+ 
+   .footer-nav ul li a:hover
+   {
+     opacity: 1;
+   }
+ 
+   .footer-bottom
+   {
+     background-color: #000;
+     padding: 20px;
+     text-align: center;
+   }
+ 
+   .footer-bottom p
+   {
+     color: white;
+   }
+ 
+   .designer
+   {
+     opacity: 0.7;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     font-weight: 400;
+     margin: 0px 5px;
+   }
+ 
+   
+   /* Media queries */
+ 
+   @media(max-width: 700px) {
+     .footer-nav ul{
+       flex-direction: column;
+     }
+ 
+     .footer-nav ul li{
+       width: 100%;
+       text-align: center;
+       margin: 10px;
+     }  
+   }
+    </style>
+
+</head>
+<body>
+
+    <div id="wrapper">
+
+    <div class="container">
+
+    <div class="navbar">
+        <div class="logo-container">
+            <div class="logo-text">
+                <a href="/">Destination Dose</a>
+            </div>
+
+            <div class="search-bar">
+                <form action="#none" class="search-bar-form">
+                   <input type="text" id = "insearch" placeholder="I am looking for.." name = "q">
+                    <div class = "sub" id="button"><img src="images/search.png" alt=""></div>
+                </form>
+            </div>
+        </div>
+
+       <div class="nav-items">
+                    <div id="nav-items-tag"><a href="#destinations">Welcome {{naming}}</a></div>
+                    <div class="btn-white" id = "btn">Sign-In</div>
+                    
+                </div>
+        
+        </div>
+
+        </div>
+
+        <div class="container-title">
+            <h2>Cuisines Patiala has to offer:</h2>
+            </div>
+            <div class="main-container">
+            
+            
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/tim-hortons.png">
+                        </div>
+                        <div class="back">
+                            <h1>Tim Hortons</h1>
+                            <p>
+                                Tim Hortons India is a branch of the renowned Canadian coffee and fast-food chain, 
+                                Tim Hortons, which has expanded its presence to India. Offering a diverse menu featuring 
+                                coffee, doughnuts, sandwiches, and other quick bites, Tim Hortons India aims to bring the 
+                                beloved flavors and hospitality of the brand to Indian consumers, providing a cozy ambiance 
+                                for enjoying quality food and beverages.</br><br>
+                                Store Timing: 9 am to 11 pm <br>
+                                Dine-in, Takeaway</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="card-container">   
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/brooklyn-central.png">
+                        </div>
+                        <div class="back">
+                            <h1>Brooklyn Central</h1>
+                            <p>
+                                Brooklyn Central Cafe brings the vibrant energy and eclectic flavors of Brooklyn,
+                                 New York, to the heart of India. Nestled in the bustling streets, this cozy 
+                                 cafe offers a fusion of American comfort food with a local twist, served alongside
+                                  artisanal coffee and handcrafted cocktails. With its trendy ambiance and welcoming atmosphere,
+                                   Brooklyn Central Cafe is the perfect spot to savor a taste of Brooklyn in India. <br> <br>
+                                   Store Timing: 9 am to 11 pm <br>
+                                Dine-in, Takeaway</p>
+                                </p>
+                        </div>
+                    </div>
+                </div> 
+        
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/starbucks.png">
+                        </div>
+                        <div class="back">
+                            <h1>Starbucks</h1>
+                            <p>
+                                Starbucks in India offers a cozy escape with a blend of local flavors and global appeal.
+                                 From aromatic coffees to delectable snacks, it's a welcoming space where people gather 
+                                 to savor their favorite brews and connect with friends amidst a vibrant ambiance.
+                                 Indulge in a diverse menu featuring signature beverages and enjoy the comforting atmosphere at Starbucks India.
+                                 <br> <br>
+                                   Store Timing: 9 am to 11 pm <br>
+                                Dine-in, Takeaway
+                                </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="main-container">
+            
+            
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/door-no-3.png">
+                        </div>
+                        <div class="back">
+                            <h1>Door No. 3</h1>
+                            <p>
+                                Door No. 3 Cafe is a charming eatery nestled in India, offering a delightful fusion
+                                 of local flavors and international cuisines. Known for its cozy ambiance and eclectic 
+                                 menu, it's a favorite spot for food enthusiasts seeking a unique dining experience.
+                                 Nestled within the bustling streets of India, Door No. 3 Cafe beckons with its inviting atmosphere, 
+                                 delectable culinary offerings, and warm hospitality.
+                                 <br> <br>
+                                 Store Timing: 9 am to 11 pm <br>
+                              Dine-in, Takeaway
+                                </p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="card-container">   
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/biryani-bk.png">
+                        </div>
+                        <div class="back">
+                            <h1>Biryani By Kilo</h1>
+                            <p>
+                                Biryani By Kilo Cafe in India offers a delightful culinary experience with its aromatic
+                                 and flavorful biryanis served in convenient kilo packs. Known for its authentic preparation
+                                  methods and premium quality ingredients, it's a go-to spot for biryani enthusiasts looking 
+                                  for a taste of traditional Indian cuisine with a modern twist.
+                                  <br> <br>
+                                 Store Timing: 9 am to 11 pm <br>
+                              Dine-in, Takeaway
+                                </p>
+                        </div>
+                    </div>
+                </div> 
+        
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/mocha.png">
+                        </div>
+                        <div class="back">
+                            <h1>Mocha Cafe And Bar</h1>
+                            <p>Mocha Cafe and Bar in India offers a unique blend of aromatic coffee and tantalizing cocktails in a 
+                                chic ambiance. Nestled in the heart of bustling streets, it's a trendy spot where guests can 
+                                unwind with friends or enjoy a quiet moment alone. With its cozy atmosphere and delectable offerings,
+                                 Mocha is the perfect destination for those seeking a delightful fusion of flavors and relaxation.
+                                 <br> <br>
+                                 Store Timing: 9 am to 11 pm <br>
+                              Dine-in, Takeaway
+                                </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        <footer>
+            <div class="footer-container">
+                <div class="social-icons">
+                   <a href=""><i class="fa-brands fa-facebook"></i></a>
+                   <a href=""><i class="fa-brands fa-instagram"></i></a>
+                   <a href=""><i class="fa-brands fa-twitter"></i></a>
+                   <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                   <a href=""><i class="fa-brands fa-youtube"></i></a> 
+                </div>
+    
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/aboutus">About</a></li>
+                        <li><a href="/contactus">Contact Us</a></li>
+                        
+                    </ul>
+                </div>   
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright &copy; 2024; Designed by <span class="designer">Team-NEXA (3)</span></p>
+            </div>
+        </footer>
+
+        </div>
+
+        <script>
+
+            document.getElementById("btn").onclick = function() 
+              
+          
+                     {
+                          window.location.href = "/login";
+                      
+                     }
+            document.getElementById("button").onclick = function() 
+      
+  
+             {
+                  window.location.href = "/search";
+              
+             }
+
+document.getElementById("insearch").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent the default form submission behavior
+        window.location.href = "/search";
+    }
+});
+          </script> 
+    
+</body>
+</html>
