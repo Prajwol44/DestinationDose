@@ -1,6 +1,6 @@
 const mongoose=require("mongoose")
 
-mongoose.connect("mongodb://localhost:27017/Contactus")
+mongoose.connect("mongodb://localhost:27017/LoginDatbase")
 .then(()=>{
     console.log('mongoose connected');
 })
